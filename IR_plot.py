@@ -11,16 +11,17 @@ from matplotlib.ticker import AutoMinorLocator
 
 #########################################################
 #plotting function definitions:
-	
+
+#smoothing function
 def runningMeanFast(x, N):
 	return np.convolve(x, np.ones((N,))/N, mode='valid')[(N-1):]
-    
+
 #plots a single IR spectrum
 def plot_IR_spectrum(wavelength, reflectance, x_range, title, save_file, smooth):
 	wavelength=wavelength.T
 	reflectance=reflectance.T
 	#only first 2000 points are useful
-	#first few points are nearly 0 (>3.7 microns, stretchs y axis if included)
+	#first few points are nearly 0 (>3.7 microns, stretchs y axis if they are included)
 	reflectance=reflectance[10:2000]
 	wavelength=wavelength[10:2000]
 	fig = plt.figure()
@@ -32,7 +33,6 @@ def plot_IR_spectrum(wavelength, reflectance, x_range, title, save_file, smooth)
 	#plot data
 	#need to smooth wavelength as well - smoothing function deletes some sample points near boundaries
 	ax1.plot(runningMeanFast(wavelength, smooth), runningMeanFast(reflectance, smooth), 'k-')
-	#ax1.plot(wavelength[:,0], runningMeanFast(reflectance[:,0],smooth))
 	ax1.set_xlabel('Wavelength ($\mu$m)')
 	ax1.set_ylabel('Reflectance')
 	ax1.set_xlim(x_range)
@@ -79,7 +79,6 @@ def plot_IR_spectrum(wavelength, reflectance, x_range, title, save_file, smooth)
 	ax2.xaxis.set_minor_locator(plt.FixedLocator(minor_locator))
 
 	plt.title(title, y=1.11)
-	#plt.show()
 	pylab.savefig(save_file, dpi=200)
 	plt.clf()
 	plt.close(fig)
@@ -98,15 +97,14 @@ def plot_IR_spectra(wavelength, reflectance, x_range, title, save_file, legend_n
 		wave_temp=wave_temp.T
 		reflectance_temp=reflectance_temp.T
 		#only first 2000 points are relevant
-	#first few points are nearly 0 (>3.7 microns, stretchs y axis if included)
+	#first few points are nearly 0 (>3.7 microns, stretchs y axis if they are included)
 		reflectance_temp=reflectance_temp[10:2000]
 		wave_temp=wave_temp[10:2000]
-		#line extracts color needed for legend
+		#line, extracts color needed for legend
 		line, = ax1.plot(wave_temp, runningMeanFast(reflectance_temp, smooth))
-		#line, = ax1.plot(wave_temp[:,0], runningMeanFast(reflectance_temp[:,0], smooth))
+		#plots legend element
 		ax1.text(0.95, 0.93-(index*0.05), legend_name[index], verticalalignment='bottom', horizontalalignment='right', transform=ax1.transAxes,  color=line.get_color())
-		#print wave_temp[400], wave_temp[1600]
-		#print max(reflectance_temp[400:1600]) - min(reflectance_temp[400:1600])
+
 	ax1.set_xlabel('Wavelength ($\mu$m)')
 	ax1.set_ylabel('Reflectance')
 	ax1.set_xlim(x_range)
@@ -145,7 +143,6 @@ def plot_IR_spectra(wavelength, reflectance, x_range, title, save_file, legend_n
 	ax2.xaxis.set_minor_locator(plt.FixedLocator(minor_locator))
 
 	plt.title(title, y=1.11)
-	#plt.show()
 	pylab.savefig(save_file, dpi=200)
 	plt.clf()
 	plt.close(fig)
