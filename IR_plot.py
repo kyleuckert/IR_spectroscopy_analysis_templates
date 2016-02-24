@@ -11,8 +11,6 @@ from matplotlib.ticker import AutoMinorLocator
 
 #########################################################
 #plotting function definitions:
-
-#smoothing function
 def runningMeanFast(x, N):
 	return np.convolve(x, np.ones((N,))/N, mode='valid')[(N-1):]
 
@@ -31,7 +29,7 @@ def plot_IR_spectrum(wavelength, reflectance, x_range, title, save_file, smooth)
 	#define ax2 with same data
 	ax2=ax1.twiny()
 	#plot data
-	#need to smooth wavelength as well - smoothing function deletes some sample points near boundaries
+	#need to smooth wavelength as well - smoothing function deletes some sample points near boundaries in valid more
 	ax1.plot(runningMeanFast(wavelength, smooth), runningMeanFast(reflectance, smooth), 'k-')
 	ax1.set_xlabel('Wavelength ($\mu$m)')
 	ax1.set_ylabel('Reflectance')
@@ -101,7 +99,8 @@ def plot_IR_spectra(wavelength, reflectance, x_range, title, save_file, legend_n
 		reflectance_temp=reflectance_temp[10:2000]
 		wave_temp=wave_temp[10:2000]
 		#line, extracts color needed for legend
-		line, = ax1.plot(wave_temp, runningMeanFast(reflectance_temp, smooth))
+		#need to smooth wavelength as well - smoothing function deletes some sample points near boundaries in valid more
+		line, = ax1.plot(runningMeanFast(wave_temp, smooth), runningMeanFast(reflectance_temp, smooth))
 		#plots legend element
 		ax1.text(0.95, 0.93-(index*0.05), legend_name[index], verticalalignment='bottom', horizontalalignment='right', transform=ax1.transAxes,  color=line.get_color())
 
