@@ -24,11 +24,6 @@ cashbox_IG_path15 = 'data/2015SEP15/Infragold/cashbox_Infragold/'
 PASAlite_IG_path15 = 'data/2015SEP15/Infragold/PASA-lite_Infragold/'
 
 #########################################################
-#create ouput directory for figures, if it doesn't exist
-if not os.path.exists('output'):
-    os.makedirs('output')
-
-#########################################################
 #define data filelist
 sample_filenames = [cashbox_data_path15+'FW203_orange_01_raw.txt', cashbox_data_path15+'FW205_dark_01_raw.txt', cashbox_data_path15+'FW205_white_01_raw.txt', cashbox_data_path15+'FW205_white_02_raw.txt', PASAlite_data_path15+'PL_FW205_dark_01_raw.txt', PASAlite_data_path15+'PL_FW205_white_01_raw.txt']
 #define Infragold filelist corresponding to data files
@@ -39,6 +34,9 @@ IG_filenames = [cashbox_IG_path15+'InfraGold_5_raw.txt', cashbox_IG_path15+'Infr
 #comment this next line out if you are not using bias correction
 bias_filenames = [cashbox_data_path15+'bias_01_raw.txt', cashbox_data_path15+'bias_03_raw.txt', cashbox_data_path15+'bias_03_raw.txt', cashbox_data_path15+'bias_03_raw.txt', PASAlite_data_path15+'bias_02_raw.txt', PASAlite_data_path15+'bias_02_raw.txt']
 
+#create ouput directory for figures, if it doesn't exist
+if not os.path.exists('output'):
+    os.makedirs('output')
 
 #########################################################
 #main body
@@ -79,8 +77,11 @@ for index, file in enumerate(sample_filenames):
 
 
 print 'plotting...'
+
+
 #########################################################
 #plot IR spectra
+
 #Four Windows comparison
 #example of a single spectrum plot
 #(wavelength, reflectance, xrange, title, save file, smoothing integer)
