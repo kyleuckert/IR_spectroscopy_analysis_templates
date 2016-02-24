@@ -123,6 +123,9 @@ save_file='output/FW205_PL_smooth_annotate.png'
 smooth=[8,8]
 #offset (if you want to offset each plot vertically):
 offset=[0.01, 0.01]
+#define list for trace colors (k=black, -=solid line)
+#see matplotlib documentation for plotting color/symbol options
+color = ['k-', 'b-']
 
 #sets up the plotting environment
 fig = plt.figure()
@@ -130,10 +133,6 @@ fig.subplots_adjust(top=0.90)
 ax1=fig.add_subplot(111)
 ax2=ax1.twiny()
 #plot multiple spectra
-
-#define list for trace colors (k=black, -=solid line)
-#see matplotlib documentation for plotting color/symbol options
-color = ['k-', 'b-']
 
 #plot each trace
 for i, wave_temp in enumerate(wavelength):
