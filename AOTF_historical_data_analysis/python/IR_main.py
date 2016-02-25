@@ -4,6 +4,7 @@ import IR_plot
 import os
 import numpy as np
 import sys
+#if plotting within IR_main:
 import matplotlib as mpl
 import matplotlib.pyplot as plt
 import matplotlib.cm as cm
@@ -52,7 +53,7 @@ IG_filenames_csv = [IG_path+'Montmorillonite_IG.csv', IG_path+'14_09_23_InfraGol
 sample_filenames_csv_bad_scans = [data_path+'cvl020_01_raw.csv', data_path+'cvl021_01_raw.csv', data_path+'cvl022_01_raw.csv']
 IG_filenames_csv_bad_scans = [IG_path+'13_12_19_InfraGold_4_raw.csv', IG_path+'13_12_19_InfraGold_4_raw.csv', IG_path+'13_12_19_InfraGold_4_raw.csv']
 
-#PASA cashbox .txt (2015, and later, current format)
+#PASA cashbox .txt (2014, and later, current format)
 #large header
 #line 11: wavelength
 #line 12: frequency
