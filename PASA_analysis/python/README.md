@@ -1,4 +1,4 @@
-# PASA_analysis_template
+# PASA analysis template: Python
 <b>Description:</b><br>
 <p>
 This program will calibrate and plot IR spectra collected by PASA-Lite and PASA cashbox
