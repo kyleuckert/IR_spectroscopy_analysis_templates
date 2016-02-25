@@ -1,7 +1,7 @@
-# PASA_analysis_template
+# Historical AOTF analysis template: Python
 <b>Description:</b><br>
 <p>
-This program will calibrate and plot IR spectra collected by PASA-Lite and PASA cashbox
+This program will calibrate and plot IR spectra collected by any AOTF IR spectrometer developed at NMSU
 </p>
 
 <b>Instructions:</b><br>
@@ -9,21 +9,34 @@ This program will calibrate and plot IR spectra collected by PASA-Lite and PASA 
 <i>Define File Names:</i>
 <ul>
 <li>Open "IR_main.py"</li>
-<li>Define data and Infragold path variables (lines 20-24)</li></ul></p>
+<li>Define data and Infragold path variables (lines 19-21)</li></ul></p>
 	data_path = '/path/to/data/cashbox_data/YY_MM_DD_tests/'
 	IG_path = '/path/to/Infragold/files/cashbox_Infragold/'
 <p><ul>
-<li>Define data file names and associated Infragold and bias file names (lines 28-35)</li>
+<li>Define data file names and associated Infragold file names (lines 27-75).</li>
 </ul></p>
 	sample_filenames = [data_path+'file1_01_raw.txt', data_path+'file2_01_raw.txt']
 	IG_filenames = [IG_path+'Infragold_1_raw.txt', IG_path+'Infragold_2_raw.txt']
 	bias_filenames = [data_path+'bias_01_raw.txt', data_path+'bias_02_raw.txt']
+<p><ul>
+<li> Files need to be classified by their type. Files supported include:</li>
+<ul>
+<li>GSFC AOTF, comma seperated .txt files (2012 and later)</li>
+<li>GSFC AOTF, tab separated .txt files (2012 and later)</li>
+<li>GSFC AOTF .fits files (2012 and later, current format)</li>
+<li>PASA cashbox .csv (tuning curve needed for wavelength data) (2013)</li>
+<li>PASA cashbox .csv (intrinsic wavelength data is accurate) (2013)</li>
+<li>PASA cashbox .csv with bad scans (such as those collected from CVL) (2013)</li>
+<li>PASA cashbox .txt (2014, and later, current format)</li>
+<li>PASA-Lite .txt files (2015 and later, current format)</li>
+<li>.asc files downloaded from USGS spectral library</li>
+</ul></ul></p>
 
 <p>
 <i>Plot Data:</i>
 <ul>
 <b>Plot a Single Spectrum</b>
-<li>Edit the following template (and place after line 82) with the following required input parameters:</li>
+<li>Edit the following template (and place after line 242) with the following required input parameters:</li>
 <ul>
 <li>wavelength dictionary value (converted to array)</li>
 <li>reflectance dictionary value (converted to array)</li>
@@ -38,7 +51,7 @@ This program will calibrate and plot IR spectra collected by PASA-Lite and PASA 
 <p>
 <ul>
 <b>Plot Multiple Spectra</b>
-<li>Edit the following template (and place after line 82) with the following required input parameters:</li>
+<li>Edit the following template (and place after line 242) with the following required input parameters:</li>
 <ul>
 <li>list of wavelength dictionary values (converted to array)</li>
 <li>list of reflectance dictionary values (converted to array)</li>
@@ -54,7 +67,7 @@ This program will calibrate and plot IR spectra collected by PASA-Lite and PASA 
 <p>
 <ul>
 <b>Plot Annotated Spectra</b>
-<li>Edit the template (lines 110-211) with the following required input parameters:</li>
+<li>Edit the template (lines 283-381) with the following required input parameters:</li>
 <ul>
 <li>list of wavelength dictionary values (converted to array)</li>
 <li>list of reflectance dictionary values (converted to array)</li>
