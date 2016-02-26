@@ -1,7 +1,7 @@
 # PASA analysis template: IDL
 <b>Description:</b><br>
 <p>
-This program will calibrate and plot IR spectra collected by PASA-Lite and PASA cashbox
+This program will calibrate and plot IR spectra collected by any AOTF IR spectrometer developed at NMSU
 </p>
 
 <b>Instructions:</b><br>
@@ -9,15 +9,29 @@ This program will calibrate and plot IR spectra collected by PASA-Lite and PASA 
 <i>Define File Names:</i>
 <ul>
 <li>Open "IR_main.pro"</li>
-<li>Define data and Infragold path variables (lines 7-11)</li></ul></p>
+<li>Define data and Infragold path variables (lines 7-9)</li></ul></p>
 	data_path = '/path/to/data/cashbox_data/YY_MM_DD_tests/'
 	IG_path = '/path/to/Infragold/files/cashbox_Infragold/'
 <p><ul>
-<li>Define data file names and associated Infragold and bias file names (lines 15-22)</li>
+<li>Define data file names and associated Infragold and bias file names (lines 15-63)</li>
 </ul></p>
 	sample_filenames = [data_path+'file1_01_raw.txt', data_path+'file2_01_raw.txt']
 	IG_filenames = [IG_path+'Infragold_1_raw.txt', IG_path+'Infragold_2_raw.txt']
 	bias_filenames = [data_path+'bias_01_raw.txt', data_path+'bias_02_raw.txt']
+
+<p><ul>
+<li> Files need to be classified by their type. Files supported include:</li>
+<ul>
+<li>GSFC AOTF, comma seperated .txt files (2012 and later)</li>
+<li>GSFC AOTF, tab separated .txt files (2012 and later)</li>
+<li>GSFC AOTF .fits files (2012 and later, current format)</li>
+<li>PASA cashbox .csv (tuning curve needed for wavelength data) (2013)</li>
+<li>PASA cashbox .csv (intrinsic wavelength data is accurate) (2013)</li>
+<li>PASA cashbox .csv with bad scans (such as those collected from CVL) (2013)</li>
+<li>PASA cashbox .txt (2014, and later, current format)</li>
+<li>PASA-Lite .txt files (2015 and later, current format)</li>
+<li>.asc files downloaded from USGS spectral library</li>
+</ul></ul></p>
 
 <p>
 <i>Plot Data:</i>
