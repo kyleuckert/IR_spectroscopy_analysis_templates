@@ -1,6 +1,4 @@
 pro IR_main
-;this file currently only demonstrates ploting for PASA csv files
-;I plan on added a demonstration of older data as well
 ;examples of older analysis is available seperately (kuckert@nmsu.edu)
 
 ;#########################################################
