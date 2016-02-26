@@ -70,6 +70,8 @@ def calibrate_data_fits(sample_file, IG_file):
 	#read IG file
 	reflectance_IG = read_file_fits(IG_file)
 
+	#not sure where this came from...
+	#or read data/Wavelength_SamplePoint_V2.txt
 	for x in range(len(reflectance)):
 		wavenumber.append(2621.5+(4.32*(x+1)))
 		wavelength.append(1E4/wavenumber[x])

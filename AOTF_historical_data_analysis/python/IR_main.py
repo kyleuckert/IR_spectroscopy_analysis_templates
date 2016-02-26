@@ -240,7 +240,6 @@ for index, file in enumerate(sample_filenames_USGS):
 
 print 'plotting...'
 
-#gypsum vacuum comparison
 #example of a single spectrum plot
 #(wavelength, reflectance, xrange, title, save file, smoothing integer)
 #Goethite
@@ -263,7 +262,7 @@ IR_plot.plot_IR_spectrum(np.array(data['FS050_jagged_no_board_2_avereaged_wavele
 IR_plot.plot_IR_spectrum(np.array(data['Montmorillonite1_01_average_wavelength']), np.array(data['Montmorillonite1_01_average_reflectance']), [1.6,3.6], '', 'output/Montmorillonite.png', 2)
 
 #actinobacteria
-IR_plot.plot_IR_spectrum(np.array(data['FW203_orange_01_raw_wavelength']), np.array(data['FW203_orange_01_raw_reflectance']), [1.6,3.6], 'FW201: cashbox (boxcar smooth size: 10)', 'output/FW203_cashbox_smooth.png', 10)
+IR_plot.plot_IR_spectrum(np.array(data['FW203_orange_01_raw_wavelength']), np.array(data['FW203_orange_01_raw_reflectance']), [1.6,3.6], 'FW203: cashbox (boxcar smooth size: 10)', 'output/FW203_cashbox_smooth.png', 10)
 
 #Bentonite
 IR_plot.plot_IR_spectrum(np.array(data['Bentonite_01_10_raw_wavelength']), np.array(data['Bentonite_01_10_raw_reflectance']), [1.6,3.6], '', 'output/bentonite.png', 2)
