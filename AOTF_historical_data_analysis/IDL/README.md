@@ -37,7 +37,7 @@ This program will calibrate and plot IR spectra collected by any AOTF IR spectro
 <i>Plot Data:</i>
 <ul>
 <b>Plot a Single Spectrum</b>
-<li>Edit the following template (and place after line 67) with the following required input parameters:</li>
+<li>Edit the following template (and place after line 315) with the following required input parameters:</li>
 <ul>
 <li>wavelength array</li>
 <li>reflectance array</li>
@@ -53,7 +53,7 @@ This program will calibrate and plot IR spectra collected by any AOTF IR spectro
 <p>
 <ul>
 <b>Plot Multiple Spectra</b>
-<li>Edit the following template (and place after line 67) with the following required input parameters:</li>
+<li>Edit the following template (and place after line 315) with the following required input parameters:</li>
 <ul>
 <li>list of wavelength arrays</li>
 <li>list of reflectance arrays</li>
@@ -72,7 +72,7 @@ This program will calibrate and plot IR spectra collected by any AOTF IR spectro
 <p>
 <ul>
 <b>Plot Annotated Spectra</b>
-<li>Edit the template (lines 110-185) with the following required input parameters:</li>
+<li>Edit the template (lines 406-478) with the following required input parameters:</li>
 <ul>
 <li>list of wavelength arrays</li>
 <li>list of reflectance arrays</li>
