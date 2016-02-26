@@ -326,8 +326,8 @@ for i, wave_temp in enumerate(wavelength):
 	ax1.plot(IR_plot.runningMeanFast(wave_tempT, smooth[i]), IR_plot.runningMeanFast(reflectance_tempT, smooth[i])+offset[i], color[i])
 
 
-ax1.set_xlabel('Wavelength ($\mu$m)')
-ax1.set_ylabel('Reflectance')
+ax1.set_xlabel('wavelength ($\mu$m)')
+ax1.set_ylabel('reflectance (arbitrary units)')
 ax1.set_xlim(x_range)
 ax1.set_ylim([0,0.7])
 ax1.xaxis.set_minor_locator(AutoMinorLocator(5))
@@ -421,8 +421,8 @@ for i, wave_temp in enumerate(wavelength):
 	ax1.plot(IR_plot.runningMeanFast(wave_tempT, smooth[i]), IR_plot.runningMeanFast(reflectance_tempT, smooth[i])+offset[i], color[i])
 
 
-ax1.set_xlabel('Wavelength ($\mu$m)')
-ax1.set_ylabel('Reflectance')
+ax1.set_xlabel('wavelength ($\mu$m)')
+ax1.set_ylabel('reflectance (arbitrary units)')
 ax1.set_xlim(x_range)
 ax1.set_ylim([0,0.27])
 ax1.xaxis.set_minor_locator(AutoMinorLocator(5))

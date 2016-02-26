@@ -55,8 +55,8 @@ def plot_IR_spectrum(wavelength, reflectance, x_range, title, save_file, smooth)
 	#ax1.plot(wavelength, runningMeanFast(reflectance, smooth), 'k-')
 	#for valid mode
 	ax1.plot(runningMeanFast(wavelength, smooth), runningMeanFast(reflectance, smooth), 'k-')
-	ax1.set_xlabel('Wavelength ($\mu$m)')
-	ax1.set_ylabel('Reflectance')
+	ax1.set_xlabel('wavelength ($\mu$m)')
+	ax1.set_ylabel('reflectance (arbitrary units)')
 	ax1.set_xlim(x_range)
 	#set minor tick marks
 	ax1.xaxis.set_minor_locator(AutoMinorLocator(5))
@@ -130,8 +130,8 @@ def plot_IR_spectra(wavelength, reflectance, x_range, title, save_file, legend_n
 		#plots legend element
 		ax1.text(0.95, 0.93-(index*0.05), legend_name[index], verticalalignment='bottom', horizontalalignment='right', transform=ax1.transAxes,  color=line.get_color())
 
-	ax1.set_xlabel('Wavelength ($\mu$m)')
-	ax1.set_ylabel('Reflectance')
+	ax1.set_xlabel('wavelength ($\mu$m)')
+	ax1.set_ylabel('reflectance (arbitrary units)')
 	ax1.set_xlim(x_range)
 	#ax1.set_ylim(y_range)
 	ax1.xaxis.set_minor_locator(AutoMinorLocator(5))

@@ -67,14 +67,13 @@ for index, file in enumerate(sample_filenames):
 	#obtain Infragold calibrated data
 	data[key+'_wavelength'], data[key+'_reflectance'] = IR_analysis.calibrate_data(file, IG_filenames[index])
 
+	###########################################################
+	#comment these next lines out if you are not using bias correction
 	#obtain Infragold calibrated bias files
 	data_bias[key+'_wavelength'], data_bias[key+'_reflectance'] = IR_analysis.calibrate_data(bias_filenames[index], IG_filenames[index])
 	#bias correction
-	###########################################################
-	#comment this next line out if you are not using bias correction
 	data_corr[key+'_reflectance'] = IR_analysis.bias_correct(data[key+'_reflectance'], data_bias[key+'_reflectance'])
 	print 'finished reading file: ', key
-
 
 print 'plotting...'
 
@@ -87,10 +86,10 @@ print 'plotting...'
 #(wavelength, reflectance, xrange, title, save file, smoothing integer)
 ###########################################################
 #replace "data_corr" with "data" if not use bias correction
-IR_plot.plot_IR_spectrum(np.array(data['FW203_orange_01_wavelength']), np.array(data_corr['FW203_orange_01_reflectance']), [1.6,3.6], 'FW201: cashbox (no smoothing)', 'output/FW203_cashbox.png', 1)
+IR_plot.plot_IR_spectrum(np.array(data['FW203_orange_01_wavelength']), np.array(data_corr['FW203_orange_01_reflectance']), [1.6,3.6], 'FW203: cashbox (no smoothing)', 'output/FW203_cashbox.png', 1)
 
 #with smoothing
-IR_plot.plot_IR_spectrum(np.array(data['FW203_orange_01_wavelength']), np.array(data_corr['FW203_orange_01_reflectance']), [1.6,3.6], 'FW201: cashbox (boxcar smooth size: 10)', 'output/FW203_cashbox_smooth.png', 10)
+IR_plot.plot_IR_spectrum(np.array(data['FW203_orange_01_wavelength']), np.array(data_corr['FW203_orange_01_reflectance']), [1.6,3.6], 'FW203: cashbox (boxcar smooth size: 10)', 'output/FW203_cashbox_smooth.png', 10)
 
 
 #example of multiple spectra (2) plot
@@ -149,8 +148,8 @@ for i, wave_temp in enumerate(wavelength):
 	ax1.plot(IR_plot.runningMeanFast(wave_tempT, smooth[i]), IR_plot.runningMeanFast(reflectance_tempT, smooth[i])+offset[i], color[i])
 
 
-ax1.set_xlabel('Wavelength ($\mu$m)')
-ax1.set_ylabel('Reflectance')
+ax1.set_xlabel('wavelength ($\mu$m)')
+ax1.set_ylabel('reflectance (arbitrary units)')
 ax1.set_xlim(x_range)
 #defines the y axis range
 ax1.set_ylim([-0.01,0.06])
