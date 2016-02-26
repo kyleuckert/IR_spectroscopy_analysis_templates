@@ -85,7 +85,7 @@ This program will calibrate and plot IR spectra collected by PASA-Lite and PASA 
 	conda install numpy
 <p>
 <ul>
-<li>Download this github repository (<a href="https://github.com/kyleuckert/PASA_analysis_template/archive/master.zip">Download ZIP button</a>) and place "IR_main.py", "IR_analysis.py", and "IR_plot.py" in the a directory that you would like the output files to be generated in.</li>
+<li>Download this github repository (<a href="https://github.com/kyleuckert/IR_spectroscopy_analysis_templates/archive/master.zip">Download ZIP button</a>) and place "IR_main.py", "IR_analysis.py", and "IR_plot.py" in the a directory that you would like the output files to be generated in.</li>
 <li>Open "IR_main.py" in a text editor and edit the necessary lines described above</li>
 <li>Run "IR_main.py" on the command line within the appropriate directory using the following command:</li>
 </ul></p>
