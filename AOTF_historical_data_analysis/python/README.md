@@ -46,7 +46,7 @@ This program will calibrate and plot IR spectra collected by any AOTF IR spectro
 <li>smoothing integer (>1)</li>
 </ul>
 </ul></p>
-	IR_plot.plot_IR_spectrum(np.array(data['file1_wavelength']), np.array(data_corr['file1_reflectance']), [1.6,3.6], 'file1 IR spectrum', 'file1.png', 10)
+	IR_plot.plot_IR_spectrum(np.array(data['file1_wavelength']), np.array(data_corr['file1_reflectance']), [1.6,3.6], 'file1 IR spectrum', 'output/file1.png', 10)
 
 <p>
 <ul>
@@ -62,7 +62,7 @@ This program will calibrate and plot IR spectra collected by any AOTF IR spectro
 <li>smoothing integer (>1)</li>
 </ul>
 </ul></p>
-	IR_plot.plot_IR_spectra([np.array(data['file1_wavelength']), np.array(data['file1_wavelength'])], [np.array(data_corr['file1_reflectance']), np.array(data_corr['file1_reflectance'])], [1.6,3.6], 'file1 vs file2 IR spectrum', 'file1_file2.png', ['file1', 'file2'], 10)
+	IR_plot.plot_IR_spectra([np.array(data['file1_wavelength']), np.array(data['file1_wavelength'])], [np.array(data_corr['file1_reflectance']), np.array(data_corr['file1_reflectance'])], [1.6,3.6], 'file1 vs file2 IR spectrum', 'output/file1_file2.png', ['file1', 'file2'], 10)
 
 <p>
 <ul>
