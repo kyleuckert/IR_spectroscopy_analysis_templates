@@ -62,6 +62,7 @@ This program will calibrate and plot IR spectra collected by PASA-Lite and PASA 
 <li>plot title</li>
 <li>save file name</li>
 <li>smoothing list (>1)</li>
+<li>offset list (vertical offset)</li>
 <li>trace color list ('k-' for a solid black line)</li>
 </ul>
 <li>Annotations are written using the following:</li>
